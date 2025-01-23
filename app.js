@@ -12,7 +12,6 @@ function agregarAmigo() {
         amigos.push(nombre);
         limpiar();
         mostrarAmigos();
-        console.log("lista de agregados: " + amigos);
     }
 }
 
@@ -28,7 +27,6 @@ function mostrarAmigos(){
     listaAmigos.innerHTML = "";
     // iterar sobre la lista de amigos
     for (let i = 0; i < amigos.length; i++) {
-        console.log("muestra amigo: " + amigos[i])
         // agregar elementos a la lista
         const nuevoElemento = document.createElement('li');
         nuevoElemento.textContent = amigos[i];
@@ -46,12 +44,10 @@ function sortearAmigo(){
     } else {
         // generar indice aleatorio
         let elegido = parseInt(Math.floor(Math.random()*maxAmigos));
-        console.log("numero que salio: " + elegido);
         // obtener el nombre sorteado
         let nombreAmigo = amigos[elegido];
         // mostrar resultado
         asignarTextoElemento('#resultado', "Tu amigo secreto es: " + nombreAmigo)
-        console.log("nombre que salio: " + nombreAmigo);
         amigos.splice(elegido, 1);        
     }
 }
